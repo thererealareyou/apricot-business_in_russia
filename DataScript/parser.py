@@ -76,10 +76,10 @@ def parse_consultant(new_data = False):
         date = re.sub(r"[^\d.]", "", soup.find('div', class_='hot-docs-page__document-info-date').text)
         add_additional_data(annotation[annotation.rfind('/')+1:annotation.rfind('.html')], name=name, full_name=full_name, desc=desc, date=date)
 
-    with open('data_consultant.json', 'w', encoding='utf-8') as file:
+    with open('Data_to_check/data_consultant.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4)
 
-    with open('descriptions_consultant.txt', 'w', encoding='utf-8') as file:
+    with open('Data_to_check/descriptions_consultant.txt', 'w', encoding='utf-8') as file:
         for key in data.keys():
             file.write(data[key]['desc'].replace('\n', '').replace('</s>', '')+'\n')
 
@@ -174,7 +174,7 @@ def parse_all_events():
 
                 add_data(ID, event_link, event_name, event_type, event_place, event_date.replace('\xa0\xa0', ' '), event_categories)
 
-    with open('data_events.json', 'w', encoding='utf-8') as file:
+    with open('Data_to_check/data_events.json', 'w', encoding='utf-8') as file:
         json.dump(data, file, ensure_ascii=False, indent=4, default=str)
 
 

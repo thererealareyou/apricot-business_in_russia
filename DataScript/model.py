@@ -47,8 +47,9 @@ def make_save_data(input_f, output_f, model, tokenizer):
     if not is_valid_filename(output_f):
         return False, f'Имя выходного файла "{output_f}" невалидно.'
 
-    with open(input_f, 'r', encoding='utf-8') as infile, open(output_f, 'w', encoding='utf-8') as outfile:
+    with open('Data_to_check/' + input_f, 'r', encoding='utf-8') as infile, open(output_f, 'w', encoding='utf-8') as outfile:
         for line in tqdm(infile):
+            a += 1
             print(line)
             line = line.strip()
             if line:

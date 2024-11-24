@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 
-def start(name_file: str):
+def start(name_file: str, log_data):
 
     # Проверка на существование файла log
     if not os.path.exists('log.txt'):
