@@ -92,7 +92,6 @@ def launch_model(file_input, file_output, is_quant_model=True):
 
 
 if __name__ == '__main__':
-    # Этот код предназначен для скачивания модели и её квантования, что занимает много времени. После код бессмысленен.
     allow = False
     if allow:
         torch.cuda.empty_cache()  # Очистка кэша CUDA
